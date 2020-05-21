@@ -4,6 +4,8 @@ require("dotenv").config();
 const cors = require("cors");
 const server = express();
 const PORT = process.env.PORT || 5000;
+const welcomeRouter = require("./routers/welcome-router");
+
 
 server.use(helmet());
 server.use(cors());
@@ -15,6 +17,9 @@ server.use((err, req, res, next) => {
     errorMessage: "Server Error",
   });
 });
+
+
+server.use("/",welcomeRouter);
 
 if (!module.parent) {
   server.listen(PORT, () => {
