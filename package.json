@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon -r dotenv/config index.js"
+    "test": "cross-env NODE_ENV=test jest --verbose --watch",
+    "server": "cross-env NODE_ENV=dev nodemon -r dotenv/config index.js"
   },
   "repository": {
     "type": "git",
@@ -20,17 +20,21 @@
   "homepage": "https://github.com/bw-ptct-pintereach-1/BE#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
     "crossenv": "0.0.2-security",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^3.22.0",
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.1",
+    "morgan": "^1.10.0",
     "sqlite3": "^4.2.0"
   },
   "devDependencies": {
     "jest": "^26.0.1",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
   }
 }
