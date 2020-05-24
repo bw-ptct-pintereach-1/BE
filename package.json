@@ -1,11 +1,15 @@
 {
   "name": "BE",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.16.2"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --verbose --watch",
-    "server": "cross-env NODE_ENV=dev nodemon -r dotenv/config index.js"
+    "server": "cross-env NODE_ENV=dev nodemon -r dotenv/config index.js",
+    "start":"node index.js"
   },
   "repository": {
     "type": "git",
