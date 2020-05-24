@@ -10,7 +10,7 @@ router.get("/", restrict(), async (req, res, next) => {
     const articleList = await Articles.getArticles();
     if (!articleList) {
       res.status(404).json({
-        message: "could not retreive user list",
+        message: "could not retreive User list",
       });
     }
     res.status(200).json(articleList);
