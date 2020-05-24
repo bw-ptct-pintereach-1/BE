@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const bcrypt = require("bcryptjs");
-const Users = require("../models/user-model");
+const Users = require("../helpers/user-model");
 const jwt = require("jsonwebtoken");
 const restrict = require("./restrict-middleware");
 
@@ -41,26 +41,24 @@ router.post("/login", async (req, res, next) => {
       return res.status(401).json(passwordAuthError);
     }
 
-    const newToken = generateToken(user);
- 
-    res.status(200).json({
-      message: `Welcome ${user.username}. You have successfully logged in`,
-      token: newToken,
+    const token = generateToken(user);
+    res.json({
+      message: `Welcome ${user.username}!`,
+      token: token,
     });
   } catch (err) {
     next(err);
   }
 });
 
-router.delete("/logout",restrict(), (req, res, next) => {
-  try {
-    res.destroy("token");
-
-    res.status(204).end();
-  } catch (err) {
-    next(err);
-  }
-});
+// router.delete("/logout", restrict(), async (req, res, next) => {
+//   try {
+//     res.destroy("token");
+//     res.status(204).end();
+//   } catch (err) {
+//     next(err);
+//   }
+// });
 
 function generateToken(user) {
   const tokenPayload = {

@@ -6,6 +6,8 @@ const server = express();
 const PORT = process.env.PORT || 5000;
 const welcomeRouter = require("./routers/welcome-router");
 const authRouter = require("./auth/auth-router");
+const userRouter = require("./routers/users-router");
+const articleRouter = require("./routers/articles_router");
 const authenticate = require("./auth/restrict-middleware");
 const cookieParser = require("cookie-parser");
 
@@ -23,6 +25,8 @@ server.use((err, req, res, next) => {
 
 server.use("/", welcomeRouter);
 server.use("/auth", authRouter);
+server.use("/articles", articleRouter)
+server.use("/user", userRouter)
 
 if (!module.parent) {
   server.listen(PORT, () => {
