@@ -58,18 +58,18 @@ router.post("/:id",validateId ,validateData, async (req, res, next) => {
   }
 });
 
-router.post("/:id/saved",validateId ,validateData, async (req, res, next) => {
+router.post("/:id/saved",validateId , async (req, res, next) => {
   try {
     
-    const saveArticle = Articles.findById(req.params.id)
+    const saveArticle = await Articles.findById(req.params.id)
     
     const payload = {
       user_id:  req.params.id,
-      article_id: saveArticle.id
+      article_id: req.body.article_id
     }
 
-    Articles.addToSaved(payload);
-    res.status(200).json(saveArticle);
+    const saved = await Articles.addToSaved(payload);
+    res.status(200).json(saved);
   } catch (err) {
     next(err);
   }

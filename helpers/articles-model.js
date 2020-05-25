@@ -27,7 +27,7 @@ function getSavedArticlesById(id){
 }
 
 async function addToSaved(article){
-const [id] = await db("users_saved").insert(article.user_id,article.article_id)
+const [id] = await db("users_saved").insert(article)
 return findById(id)
 }
 
@@ -51,6 +51,7 @@ module.exports = {
   getSavedArticlesById,
   addArticle,
   updateArticle,
-  addToSaved
+  addToSaved,
+  findById
 
 };
