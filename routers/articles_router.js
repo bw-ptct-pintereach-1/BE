@@ -33,19 +33,19 @@ router.get("/:id", validateId, restrict(), async (req, res, next) => {
   }
 });
 
-// router.get("/saved/:id", validateId, restrict(), async (req, res, next) => {
-//   try {
-//     const list = await Articles.getSavedArticlesById(req.params.id);
-//     if (!list) {
-//       res.status(404).json({
-//         message: "Could not get articles",
-//       });
-//     }
-//     res.json(list);
-//   } catch (err) {
-//     next(err);
-//   }
-// });
+router.get("/saved/:id", validateId, restrict(), async (req, res, next) => {
+  try {
+    const list = await Articles.getSavedArticlesById(req.params.id);
+    if (!list) {
+      res.status(404).json({
+        message: "Could not get articles",
+      });
+    }
+    res.json(list);
+  } catch (err) {
+    next(err);
+  }
+});
 
 router.post("/:id",validateId ,validateData, async (req, res, next) => {
   try {
@@ -57,6 +57,24 @@ router.post("/:id",validateId ,validateData, async (req, res, next) => {
     next(err);
   }
 });
+
+router.post("/:id/saved",validateId ,validateData, async (req, res, next) => {
+  try {
+    
+    const saveArticle = Articles.findById(req.params.id)
+    
+    const payload = {
+      user_id:  req.params.id,
+      article_id: saveArticle.id
+    }
+
+    Articles.addToSaved(payload);
+    res.status(200).json(saveArticle);
+  } catch (err) {
+    next(err);
+  }
+});
+
 
 module.exports = router;
 

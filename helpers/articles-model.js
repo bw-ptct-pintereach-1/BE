@@ -26,7 +26,10 @@ function getSavedArticlesById(id){
     .where("us.user_id", id);
 }
 
-
+async function addToSaved(article){
+const [id] = await db("users_saved").insert(article.user_id,article.article_id)
+return findById(id)
+}
 
 async function addArticle(article) {
   const [id] = await db("articles").insert(article)
@@ -48,5 +51,6 @@ module.exports = {
   getSavedArticlesById,
   addArticle,
   updateArticle,
+  addToSaved
 
 };
