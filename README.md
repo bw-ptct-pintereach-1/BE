@@ -1,4 +1,3 @@
-
 ### Pintreach ###-----------------------------------------------------------------------------------------
 
 
@@ -39,16 +38,16 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 ------------------------
 ***Data Schema for CATEGORIES***
 ------------------------
-| name              |id| 
-| ------------      |--| 
-| `Health`          | 1|
-|`Fitness/Excercise`| 2| 
-| `Music`           | 3| 
-| `Gaming`          | 4|
-| `Technology`      | 5| 
-| `Home`            | 6| 
-| `News`            | 7| 
-| `Other`           | 8|          
+| name            |id| 
+| ------------    |--| 
+| Health          | 1|
+|Fitness/Excercise| 2| 
+| Music           | 3| 
+| Gaming          | 4|
+| Technology      | 5| 
+| Home            | 6| 
+| News            | 7| 
+| Other           | 8|          
 
 
 --------------------------------------***ENDPOINTS***-----------------------------------------------------
@@ -88,7 +87,9 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 
 | Method | description |
 |--------|------------------------------------------------------------------|
-|**GET** |(takes in a user_id) Returns a list of all articles in the database saved by the user with the given id{author,title,content}|
+|**GET** |(takes in a user_id) Returns a list of all articles in the database saved by the user with the given id{author,
+title,content}|
+|----------------------------------------------------------------------------------------|
 |**POST**|(takes in a user_id) Adds a new article to be saved  by user with the given id |
 
 
@@ -119,8 +120,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 | Method | description |
 |--------|------------------------------------------------------------------|
 |**POST** |{ takes a username,password,and email } returns a status of 200 upon successful request, and also returns a user object 
---------------------------------------------------------------------------------------------------------------------
---------------------------------------------------------------------------------------------------------------------
+
 ***URL*** -**/auth/login**
 
 | Method | description|

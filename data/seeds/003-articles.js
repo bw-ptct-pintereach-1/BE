@@ -2,7 +2,7 @@
 exports.seed = async function(knex) {
   
       return knex('articles').insert([
-        {title:"Is trump crazy?"  ,author: "tim timson" ,date_written: "03/25/2018" ,content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra adipiscing at in tellus integer. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Malesuada fames ac turpis egestas integer eget aliquet nibh praesent. Risus feugiat in ante metus dictum. Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Vitae ultricie" ,category_id:8,user_id:2},
+        {title:"Is trump getting elected again?"  ,author: "tim timson" ,date_written: "03/25/2018" ,content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra adipiscing at in tellus integer. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Malesuada fames ac turpis egestas integer eget aliquet nibh praesent. Risus feugiat in ante metus dictum. Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Vitae ultricie" ,category_id:8,user_id:2},
 
         {title:"Top 5 Rappers of all Time"  ,author:"flex flexson"  ,date_written:"01/22/2016"  , content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra adipiscing at in tellus integer. Aliquam eleifend mi in nulla posuere sollicitudin aliquam ultrices. Malesuada fames ac turpis egestas integer eget aliquet nibh praesent. Risus feugiat in ante metus dictum. Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Vitae ultricie",category_id:3,user_id:2},
 
