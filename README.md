@@ -7,3 +7,13 @@ order modification department at 1-800-247-2076, option 4. The timings for order
 
 
 Base API URL - **https://pintreach1.herokuapp.com/**
+
+------------------------
+***Data Schema for USERS***
+------------------------
+
+| name         | type   | required | description            |
+| ------------ | ------ | -------- | --------------         |
+| `username`   | String | Yes      | Must be unique         |
+| `password`   | String | Yes      |                        |
+| `email`      | String | Yes      | Must be unique         |
