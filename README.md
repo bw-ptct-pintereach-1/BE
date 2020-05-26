@@ -89,7 +89,6 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 |--------|------------------------------------------------------------------|
 |GET |(takes in a user_id) Returns a list of all articles in the database saved by the user with the given id{author,
 title,content}|
-
 |POST|(takes in a user_id) Adds a new article to be saved  by user with the given id |
 
 
