@@ -16,9 +16,12 @@ async function add(user){
 }
 
 
+
+
 module.exports = {
     add,
-    findBy
+    findBy,
+    findById
 }
 
 // add functionality to delete a user's account
