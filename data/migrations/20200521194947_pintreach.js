@@ -6,7 +6,6 @@ exports.up = async function (knex) {
     tbl.string("password", 128).notNull();
 
     tbl.string("email").notNull().unique();
-    
   });
 
   await knex.schema.createTable("categories", (tbl) => {
@@ -17,8 +16,9 @@ exports.up = async function (knex) {
   await knex.schema.createTable("articles", (tbl) => {
     tbl.increments("id");
     tbl.string("title").notNull();
-    
-    tbl.string("author").notNull();
+
+    tbl.string("author")
+    tbl.string("edited_by")
     tbl.date("date_written");
     tbl.string("content").notNull();
     tbl.string("url");
@@ -28,7 +28,7 @@ exports.up = async function (knex) {
       .inTable("categories")
       .onDelete("SET NULL")
       .onUpdate("CASCADE");
-      tbl
+    tbl
       .integer("user_id")
       .references("id")
       .inTable("users")
@@ -36,10 +36,7 @@ exports.up = async function (knex) {
       .onUpdate("CASCADE");
   });
 
- 
- 
-
-    await knex.schema.createTable("users_saved", (tbl) => {
+  await knex.schema.createTable("users_saved", (tbl) => {
     tbl
       .integer("user_id")
       .references("id")
@@ -55,7 +52,6 @@ exports.up = async function (knex) {
 
     tbl.primary(["user_id", "article_id"]);
   });
- 
 };
 
 exports.down = async function (knex) {

@@ -28,7 +28,7 @@ function getSavedArticlesById(id){
 
 async function addToSaved(article){
 const [id] = await db("users_saved").insert(article)
-return findById(id)
+return findById(article.article_id)
 }
 
 async function addArticle(article) {
@@ -52,6 +52,7 @@ module.exports = {
   addArticle,
   updateArticle,
   addToSaved,
-  findById
+  findById,
+  removeArticle
 
 };
