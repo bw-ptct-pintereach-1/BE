@@ -63,6 +63,11 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 
 
 
+
+
+
+
+
 **/articles/:id**
 
 | Method | description |
@@ -74,7 +79,11 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 
 
 
+
+
+
 **/articles/:id/saved**
+
 
 
 | Method | description |
@@ -84,9 +93,37 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 
 
 
+
+
+
+
+
 **/articles/:id/user/:user_id**
 
 
 | Method | description |
 |--------|------------------------------------------------------------------|
 |**PUT** |(takes in article_id as first param and  user_id as second) edits article with the given article id and sets the edited_by field to the username associated with the given user_id {requires title,content,category}|
+
+
+
+
+
+
+
+
+------------------------------------***AUTH***---------------------------------------
+
+**/auth/register**
+
+| Method | description |
+|--------|------------------------------------------------------------------|
+|**POST** |{ takes a username,password,and email } returns a status of 200 upon successful request, and also returns a user object 
+
+
+**/auth/login**
+
+| Method | description |
+|--------|------------------------------------------------------------------|
+|**POST** |{ takes a username and password } returns a status of 200 upon successful request, and also returns an object containing a token and user id
+
