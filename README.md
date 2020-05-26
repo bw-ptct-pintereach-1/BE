@@ -123,7 +123,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 
 **/auth/login**
 
-| Method | description |
+| Method | description|
 |--------|------------------------------------------------------------------|
 |**POST** |{ takes a username and password } returns a status of 200 upon successful request, and also returns an object containing a token and user id
 
