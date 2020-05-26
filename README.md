@@ -3,10 +3,11 @@ order modification department at 1-800-247-2076, option 4. The timings for order
 
 
 
------------------------------------------### Pintreach ###---------------------------------------------
+### Pintreach ###-----------------------------------------------------------------------------------------
 
 
 Base API URL - **https://pintreach1.herokuapp.com/**
+
 
 
 --------------------------------------------***DATABASE***----------------------------------------------------
@@ -57,8 +58,17 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 --------------------------------------***ENDPOINTS***-----------------------------------------------------
 
 
-#/articles#
+**/articles**
 
-|endpoint|description|
+| Method | description |
 |--------|------------------------------------------------------------------|
 |**GET** |Returns a list of all articles in the database {id,title,category}|
+
+
+**/articles/:id**
+
+| Method | description |
+|--------|------------------------------------------------------------------|
+|**GET** |(takes in a user_id) Returns a list of all articles in the database written by the user with the given id{author,title,content}|
+|**POST**|(takes in a user_id) Adds a new article written by user with the given id |
+|**DELETE**|(takes in an article_id) Removes article with given id from the database regardless of user
