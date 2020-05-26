@@ -13,7 +13,39 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 ------------------------
 
 | name         | type   | required | description            |
-| ------------ | ------ | -------- | --------------         |
+| ------------ | ------ | -------- | --------------         |                                                      
 | `username`   | String | Yes      | Must be unique         |
 | `password`   | String | Yes      |                        |
 | `email`      | String | Yes      | Must be unique         |
+
+
+------------------------
+***Data Schema for ARTICLES***
+------------------------
+
+
+| name         | type   | required | description            |
+| ------------ | ------ | -------- | --------------         |
+| `title`      | String | Yes      | title of article       |
+| `author`     | String | Auto     | who wrote the article  |
+| `edited_by`  | String | No       |                        |
+|`date_written`| String | No       |                        |
+| `content`    | String | No       | article text content   |
+| `url`        | String | No       | link is applicable     |
+| `user_id`    | String | No       |                        |
+| `category_id`| String | No       |                        |
+
+
+------------------------
+***Data Schema for CATEGORIES***
+------------------------
+| name              | id   | 
+| ------------      | ------ | 
+| `Health`          | 1 |
+|`Fitness/Excercise`| 2 | 
+| `Music`           | 3 | 
+| `Gaming`          | 4 |
+| `Technology`      | 5 | 
+| `Home`            | 6 | 
+| `News`            | 7 | 
+| `Other`           | 8 |          
