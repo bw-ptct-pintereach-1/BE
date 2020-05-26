@@ -1,7 +1,3 @@
-# BEIn this case I would request you to speak with order modification team for further assistance.
-order modification department at 1-800-247-2076, option 4. The timings for order modification department is 8 am to 9 pm CST Monday to Friday. Weekend timings for  Order modification department is 8 am to 5 pm CST.
-
-
 
 ### Pintreach ###-----------------------------------------------------------------------------------------
 
@@ -22,7 +18,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 | `password`   | String | Yes      |                        |
 | `email`      | String | Yes      | Must be unique         |
 
-===============================================================
+
 ------------------------
 ***Data Schema for ARTICLES***
 ------------------------
@@ -39,7 +35,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 | `user_id`    | Integer| No       |                        |
 | `category_id`| Integer| No       |                        |
 
-===============================================================
+
 ------------------------
 ***Data Schema for CATEGORIES***
 ------------------------
@@ -54,7 +50,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 | `News`            | 7| 
 | `Other`           | 8|          
 
-===============================================================
+
 --------------------------------------***ENDPOINTS***-----------------------------------------------------
 
 
@@ -65,7 +61,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 |**GET** |Returns a list of all articles in the database {id,title,category}|
 
 
-====================================================================================================================
+
 
 **/articles/:id**
 
@@ -76,7 +72,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 |**DELETE**|(takes in an article_id) Removes article with given id from the database regardless of user
 
 
-====================================================================================================================
+
 
 **/articles/:id/saved**
 
@@ -87,7 +83,6 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 |**POST**|(takes in a user_id) Adds a new article to be saved  by user with the given id |
 
 
-====================================================================================================================
 
 **/articles/:id/user/:user_id**
 
