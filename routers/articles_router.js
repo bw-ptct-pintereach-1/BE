@@ -141,6 +141,10 @@ async function validateData(req, res, next) {
     res.status(400).json({
       message: "Missing Article Content",
     });
+  } else if (!req.body.category_id) {
+    res.status(400).json({ message: "Missing category id" });
+  } else if (req.body.category_id > 10 || req.body.category_id < 1) {
+    res.status(400).json({ message: "select category id from 1-8" });
   } else {
     next();
   }
