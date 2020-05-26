@@ -7,7 +7,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 
 --------------------------------------------***DATABASE***----------------------------------------------------
 
-------------------------
+
 ***Data Schema for USERS***
 ------------------------
 
@@ -18,7 +18,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 | `email`      | String | Yes      | Must be unique         |
 
 
-------------------------
+
 ***Data Schema for ARTICLES***
 ------------------------
 
@@ -35,7 +35,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 | `category_id`| Integer| No       |                        |
 
 
-------------------------
+
 ***Data Schema for CATEGORIES***
 ------------------------
 | name            |id| 
@@ -57,7 +57,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 
 | Method | description |
 |--------|------------------------------------------------------------------|
-|**GET** |Returns a list of all articles in the database {id,title,category}|
+|GET |Returns a list of all articles in the database {id,title,category}|
 
 
 
@@ -71,9 +71,9 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 
 | Method | description |
 |--------|------------------------------------------------------------------|
-|**GET** |(takes in a user_id) Returns a list of all articles in the database written by the user with the given id{returns author,title,content}|
-|**POST**|(takes in a user_id) Adds a new article written by user with the given id {requires title,content,category} |
-|**DELETE**|(takes in an article_id) Removes article with given id from the database regardless of user
+|GET |(takes in a user_id) Returns a list of all articles in the database written by the user with the given id{returns author,title,content}|
+|POST|(takes in a user_id) Adds a new article written by user with the given id {requires title,content,category} |
+|DELETE|(takes in an article_id) Removes article with given id from the database regardless of user
 
 
 
@@ -87,10 +87,10 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 
 | Method | description |
 |--------|------------------------------------------------------------------|
-|**GET** |(takes in a user_id) Returns a list of all articles in the database saved by the user with the given id{author,
+|GET |(takes in a user_id) Returns a list of all articles in the database saved by the user with the given id{author,
 title,content}|
-|----------------------------------------------------------------------------------------|
-|**POST**|(takes in a user_id) Adds a new article to be saved  by user with the given id |
+
+|POST|(takes in a user_id) Adds a new article to be saved  by user with the given id |
 
 
 
@@ -104,7 +104,7 @@ title,content}|
 
 | Method | description |
 |--------|------------------------------------------------------------------|
-|**PUT** |(takes in article_id as first param and  user_id as second) edits article with the given article id and sets the edited_by field to the username associated with the given user_id {requires title,content,category}|
+|PUT |(takes in article_id as first param and  user_id as second) edits article with the given article id and sets the edited_by field to the username associated with the given user_id {requires title,content,category}|
 
 
 
@@ -119,11 +119,11 @@ title,content}|
 
 | Method | description |
 |--------|------------------------------------------------------------------|
-|**POST** |{ takes a username,password,and email } returns a status of 200 upon successful request, and also returns a user object 
+|POST |{ takes a username,password,and email } returns a status of 200 upon successful request, and also returns a user object 
 
 ***URL*** -**/auth/login**
 
 | Method | description|
 |--------|------------------------------------------------------------------|
-|**POST** |{ takes a username and password } returns a status of 200 upon successful request, and also returns an object containing a token and user id
+|POST |{ takes a username and password } returns a status of 200 upon successful request, and also returns an object containing a token and user id
 
