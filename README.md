@@ -22,7 +22,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 | `password`   | String | Yes      |                        |
 | `email`      | String | Yes      | Must be unique         |
 
-
+===============================================================
 ------------------------
 ***Data Schema for ARTICLES***
 ------------------------
@@ -39,7 +39,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 | `user_id`    | Integer| No       |                        |
 | `category_id`| Integer| No       |                        |
 
-
+===============================================================
 ------------------------
 ***Data Schema for CATEGORIES***
 ------------------------
@@ -54,7 +54,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 | `News`            | 7| 
 | `Other`           | 8|          
 
-
+===============================================================
 --------------------------------------***ENDPOINTS***-----------------------------------------------------
 
 
@@ -65,10 +65,33 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 |**GET** |Returns a list of all articles in the database {id,title,category}|
 
 
+====================================================================================================================
+
 **/articles/:id**
 
 | Method | description |
 |--------|------------------------------------------------------------------|
-|**GET** |(takes in a user_id) Returns a list of all articles in the database written by the user with the given id{author,title,content}|
-|**POST**|(takes in a user_id) Adds a new article written by user with the given id |
+|**GET** |(takes in a user_id) Returns a list of all articles in the database written by the user with the given id{returns author,title,content}|
+|**POST**|(takes in a user_id) Adds a new article written by user with the given id {requires title,content,category} |
 |**DELETE**|(takes in an article_id) Removes article with given id from the database regardless of user
+
+
+====================================================================================================================
+
+**/articles/:id/saved**
+
+
+| Method | description |
+|--------|------------------------------------------------------------------|
+|**GET** |(takes in a user_id) Returns a list of all articles in the database saved by the user with the given id{author,title,content}|
+|**POST**|(takes in a user_id) Adds a new article to be saved  by user with the given id |
+
+
+====================================================================================================================
+
+**/articles/:id/user/:user_id**
+
+
+| Method | description |
+|--------|------------------------------------------------------------------|
+|**GET** |(takes in article_id as first param and  user_id as second) edits article with the given article id and sets the edited_by field to the username associated with the given user_id {requires title,content,category}|
