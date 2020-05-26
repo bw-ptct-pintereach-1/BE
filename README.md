@@ -3,10 +3,13 @@ order modification department at 1-800-247-2076, option 4. The timings for order
 
 
 
-### Pintreach ###
+-----------------------------------------### Pintreach ###---------------------------------------------
 
 
 Base API URL - **https://pintreach1.herokuapp.com/**
+
+
+--------------------------------------------***DATABASE***----------------------------------------------------
 
 ------------------------
 ***Data Schema for USERS***
@@ -29,23 +32,33 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 | `title`      | String | Yes      | title of article       |
 | `author`     | String | Auto     | who wrote the article  |
 | `edited_by`  | String | No       |                        |
-|`date_written`| String | No       |                        |
+|`date_written`| Date   | No       |                        |
 | `content`    | String | No       | article text content   |
 | `url`        | String | No       | link is applicable     |
-| `user_id`    | String | No       |                        |
-| `category_id`| String | No       |                        |
+| `user_id`    | Integer| No       |                        |
+| `category_id`| Integer| No       |                        |
 
 
 ------------------------
 ***Data Schema for CATEGORIES***
 ------------------------
-| name              | id   | 
-| ------------      | ------ | 
-| `Health`          | 1 |
-|`Fitness/Excercise`| 2 | 
-| `Music`           | 3 | 
-| `Gaming`          | 4 |
-| `Technology`      | 5 | 
-| `Home`            | 6 | 
-| `News`            | 7 | 
-| `Other`           | 8 |          
+| name              |id| 
+| ------------      |--| 
+| `Health`          | 1|
+|`Fitness/Excercise`| 2| 
+| `Music`           | 3| 
+| `Gaming`          | 4|
+| `Technology`      | 5| 
+| `Home`            | 6| 
+| `News`            | 7| 
+| `Other`           | 8|          
+
+
+--------------------------------------***ENDPOINTS***-----------------------------------------------------
+
+
+#/articles#
+
+|endpoint|description|
+|--------|------------------------------------------------------------------|
+|**GET** |Returns a list of all articles in the database {id,title,category}|
