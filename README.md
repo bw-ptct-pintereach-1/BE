@@ -30,7 +30,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 | `author`     | String | Auto     | who wrote the article  |
 | `edited_by`  | String | No       |                        |
 |`date_written`| Date   | No       |                        |
-| `content`    | String | No       | article text content   |
+| `content`    | String | Yes      | article text content   |
 | `url`        | String | No       | link is applicable     |
 | `user_id`    | Integer| No       |                        |
 | `category_id`| Integer| No       |                        |
@@ -89,4 +89,4 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 
 | Method | description |
 |--------|------------------------------------------------------------------|
-|**GET** |(takes in article_id as first param and  user_id as second) edits article with the given article id and sets the edited_by field to the username associated with the given user_id {requires title,content,category}|
+|**PUT** |(takes in article_id as first param and  user_id as second) edits article with the given article id and sets the edited_by field to the username associated with the given user_id {requires title,content,category}|
