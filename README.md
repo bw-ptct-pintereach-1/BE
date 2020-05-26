@@ -54,7 +54,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 --------------------------------------***ENDPOINTS***-----------------------------------------------------
 
 
-**/articles**
+***URL*** -**/articles**
 
 | Method | description |
 |--------|------------------------------------------------------------------|
@@ -68,7 +68,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 
 
 
-**/articles/:id**
+***URL*** -**/articles/:id**
 
 | Method | description |
 |--------|------------------------------------------------------------------|
@@ -82,7 +82,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 
 
 
-**/articles/:id/saved**
+***URL*** -**/articles/:id/saved**
 
 
 
@@ -98,7 +98,7 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 
 
 
-**/articles/:id/user/:user_id**
+***URL*** -**/articles/:id/user/:user_id**
 
 
 | Method | description |
@@ -114,14 +114,14 @@ Base API URL - **https://pintreach1.herokuapp.com/**
 
 ------------------------------------***AUTH***---------------------------------------
 
-**/auth/register**
+***URL*** -**/auth/register**
 
 | Method | description |
 |--------|------------------------------------------------------------------|
 |**POST** |{ takes a username,password,and email } returns a status of 200 upon successful request, and also returns a user object 
 --------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------
-**/auth/login**
+***URL*** -**/auth/login**
 
 | Method | description|
 |--------|------------------------------------------------------------------|
