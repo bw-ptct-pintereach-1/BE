@@ -101,12 +101,13 @@ router.delete("/:id", (req, res, next) => {
         res
           .status(404)
           .json({ message: "Could not find article with given id" });
-      }
+      } 
     })
     .catch((err) => {
       res.status(500).json({ message: "Failed to delete article" });
     });
 });
+
 
 module.exports = router;
 
@@ -141,7 +142,7 @@ async function validateData(req, res, next) {
     res.status(400).json({
       message: "Missing Article Content",
     });
-  } else if (!req.body.category) {
+  } else if (!req.body.category_id) {
     res.status(400).json({ message: "Missing category id" });
   } else if (req.body.category_id > 10 || req.body.category_id < 1) {
     res.status(400).json({ message: "select category id from 1-8" });

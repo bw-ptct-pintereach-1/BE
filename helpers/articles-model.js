@@ -45,6 +45,10 @@ function removeArticle(id) {
   return db("articles").where({id}).del();
 }
 
+function removeSaved(id) {
+  return db("users_saved").where(id,"user_id").del();
+}
+
 module.exports = {
   getArticles,
   getWrittenArticlesById,
@@ -53,6 +57,7 @@ module.exports = {
   updateArticle,
   addToSaved,
   findById,
-  removeArticle
+  removeArticle,
+  removeSaved
 
 };

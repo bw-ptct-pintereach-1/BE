@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/bw-ptct-pintereach-1/BE#readme",
   "dependencies": {
+    "@sendgrid/mail": "^6.5.5",
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
