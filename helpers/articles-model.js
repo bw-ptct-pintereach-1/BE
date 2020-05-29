@@ -3,7 +3,7 @@ const db = require("../data/config");
 function getArticles() {
   return db("articles as a")
     .leftJoin("categories as c", "c.id", "a.category_id")
-    .select("a.id", "a.title", "c.category_name");
+    .select("a.id", "a.title", "c.category_name","a.content");
 }
 
 function findById(id){
@@ -46,7 +46,7 @@ function removeArticle(id) {
 }
 
 function removeSaved(id) {
-  return db("users_saved").where(id,"user_id").del();
+  return db("users_saved").where(id,"user_id").truncate();
 }
 
 module.exports = {
