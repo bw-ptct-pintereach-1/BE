@@ -101,13 +101,12 @@ router.delete("/:id", (req, res, next) => {
         res
           .status(404)
           .json({ message: "Could not find article with given id" });
-      } 
+      }
     })
     .catch((err) => {
       res.status(500).json({ message: "Failed to delete article" });
     });
 });
-
 
 module.exports = router;
 
