@@ -8,7 +8,7 @@ router.get("/", restrict(), async (req, res, next) => {
     const articleList = await Articles.getArticles();
     if (!articleList) {
       res.status(404).json({
-        message: "could not retreive User list",
+        message: "could not retrieve User list",
       });
     }
     res.status(200).json(articleList);
@@ -115,6 +115,7 @@ module.exports = router;
 async function validateId(req, res, next) {
   try {
     const user = await Users.findById(req.params.id);
+    console.log(user);
     if (!user) {
       return res.status(400).json({
         message: "Invalid User ID Given",
@@ -129,11 +130,8 @@ async function validateId(req, res, next) {
 }
 
 async function validateData(req, res, next) {
-  if (Object.keys(req.body).length === 0) {
-    res.status(400).json({
-      message: "Missing all required article information",
-    });
-  } else if (!req.body.title) {
+  console.log(req.body);
+  if (!req.body.title) {
     res.status(400).json({
       message: "Missing Article Title",
     });

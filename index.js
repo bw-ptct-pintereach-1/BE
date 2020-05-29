@@ -13,9 +13,7 @@ const server = express();
 const PORT = process.env.PORT || 5000;
 
 server.use(helmet());
-server.use(cors({
-  credentials: true
-}));
+server.use(cors({}));
 server.use(express.json());
 server.use(cookieParser());
 
@@ -28,8 +26,8 @@ server.use((err, req, res, next) => {
 
 server.use("/", welcomeRouter);
 server.use("/auth", authRouter);
-server.use("/articles", articleRouter)
-server.use("/user", userRouter)
+server.use("/articles", articleRouter);
+server.use("/user", userRouter);
 
 if (!module.parent) {
   server.listen(PORT, () => {
