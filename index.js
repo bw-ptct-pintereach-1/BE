@@ -13,7 +13,9 @@ const server = express();
 const PORT = process.env.PORT || 5000;
 
 server.use(helmet());
-server.use(cors());
+server.use(cors({
+  credentials: true
+}));
 server.use(express.json());
 server.use(cookieParser());
 
