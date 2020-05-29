@@ -1,7 +1,7 @@
 exports.seed = async function (knex) {
   return knex("articles").insert([
     {
-      title: "Is trump getting elected again?",
+      title: "Who would win in a republican vs democrat cage match?",
       author: "tim timson",
       date_written: "03/25/2018",
       content:
@@ -45,6 +45,14 @@ exports.seed = async function (knex) {
       content:
         "Aliquam eleifend mi in nulla pvvosuere sollicitudin aliquam ultrices. Malesuada fames ac turpis egestas integer eget aliquet nibh praesent. Risus feugiat in ante metus dictum. Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Vitae ultricie",
       category_id: 3,
+    },
+    {
+      title: "Traces of BigFoot found in mans backyard?",
+      author: "conspiracy-guy",
+      date_written: "01/27/2010",
+      content:
+        "Aliquam eleifend mi in nulla pvvosuere sollicitudin aliquam ultrices. Malesuada fames ac turpis egestas integer eget aliquet nibh praesent. Risus feugiat in ante metus dictum. Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Vitae ultricie",
+      category_id: 8,
     },
   ]);
 };
