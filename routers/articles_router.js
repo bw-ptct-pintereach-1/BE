@@ -17,7 +17,7 @@ router.get("/", restrict(), async (req, res, next) => {
   }
 });
 
-router.get("/:id", validateId, restrict(), async (req, res, next) => {
+router.get("/:id", validateUserId, restrict(), async (req, res, next) => {
   try {
     const list = await Articles.getWrittenArticlesById(req.params.id);
     if (!list) {
@@ -31,7 +31,7 @@ router.get("/:id", validateId, restrict(), async (req, res, next) => {
   }
 });
 
-router.get("/:id/saved", validateId, restrict(), async (req, res, next) => {
+router.get("/:id/saved", validateUserId, restrict(), async (req, res, next) => {
   try {
     const list = await Articles.getSavedArticlesById(req.params.id);
     if (!list) {
@@ -47,7 +47,7 @@ router.get("/:id/saved", validateId, restrict(), async (req, res, next) => {
 
 router.post(
   "/:id",
-  validateId,
+  validateUserId,
   validateData,
   findUser,
   async (req, res, next) => {
@@ -63,7 +63,7 @@ router.post(
   }
 );
 
-router.post("/:id/saved", validateId, async (req, res, next) => {
+router.post("/:id/saved", validateUserId, async (req, res, next) => {
   try {
     const payload = {
       user_id: req.params.id,
@@ -130,7 +130,7 @@ module.exports = router;
 
 //----------------- MIDDLEWARE ------------------------
 
-async function validateId(req, res, next) {
+async function validateUserId(req, res, next) {
   try {
     const user = await Users.findById(req.params.id);
     console.log(user);

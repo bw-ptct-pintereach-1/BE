@@ -17,8 +17,6 @@ describe("users integration testing", () => {
     password: "m",
   };
 
- 
-
   it("POST /auth/register", async () => {
     const res = await supertest(server).post("/auth/register").send(user);
     expect(res.statusCode).toBe(201);
@@ -26,26 +24,24 @@ describe("users integration testing", () => {
     expect(res.type).toBe("application/json");
   });
 
- //checks for duplicates
+  //checks for duplicates
   it("POST /auth/register", async () => {
-      const newUser = {
-          username:"mdl518",
-          email:"mdl@aol.com",
-          password:"pass22"
-      }
+    const newUser = {
+      username: "mdl518",
+      email: "mdl@aol.com",
+      password: "pass22",
+    };
     const res = await supertest(server).post("/auth/register").send(newUser);
     expect(res.type).toBe("application/json");
     expect(res.statusCode).toBe(409);
     expect(res.body.message).toBe("Username already in use");
   });
 
- 
-
   it("POST /auth/login", async () => {
     const userLogin = {
-        username: "mdl518",
-        password: "pass22",
-      };
+      username: "mdl518",
+      password: "pass22",
+    };
     const res = await supertest(server).post("/auth/login").send(userLogin);
     expect(res.type).toBe("application/json");
     expect(res.statusCode).toBe(200);
