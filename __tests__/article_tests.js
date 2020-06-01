@@ -74,6 +74,16 @@ describe("articles integration tests", () => {
     
   });
 
+  it("PUT /articles/2/user/2", async () => {
+    const res = await supertest(server)
+    .put("/articles/2/user/2")
+    .send(updatedArticle)
+    .set("authorization", token);
+    expect(res.type).toBe("application/json");
+    expect(res.statusCode).toBe(200);
+    
+  });
+
  // DELETE TEST
 
  it("DELETE /articles/1", async () => {
@@ -83,5 +93,23 @@ describe("articles integration tests", () => {
     expect(res.type).toBe("application/json");
     expect(res.statusCode).toBe(200);
     expect(res.body.removed).toBe(1);
+  });
+
+  it("DELETE /articles/2", async () => {
+    const res = await supertest(server)
+    .delete("/articles/2")
+    .set("authorization", token);
+    expect(res.type).toBe("application/json");
+    expect(res.statusCode).toBe(200);
+    expect(res.body.removed).toBe(2);
+  });
+
+  it("DELETE /articles/3", async () => {
+    const res = await supertest(server)
+    .delete("/articles/3")
+    .set("authorization", token);
+    expect(res.type).toBe("application/json");
+    expect(res.statusCode).toBe(200);
+    expect(res.body.removed).toBe(3);
   });
 });
