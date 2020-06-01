@@ -7,8 +7,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cross-env NODE_ENV=test jest --verbose --watch",
-    "server": "cross-env NODE_ENV=dev nodemon -r dotenv/config index.js",
+    "test": "cross-env HASH_ROUNDS=8 NODE_ENV=test jest  --watch --runInBand --verbose false",
+    "server": "cross-env HASH_ROUNDS=8 NODE_ENV=development nodemon -r dotenv/config index.js",
     "start": "cross-env NODE_ENV=production node index.js"
   },
   "repository": {

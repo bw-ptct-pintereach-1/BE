@@ -3,7 +3,7 @@ const db = require("../data/config");
 function getArticles() {
   return db("articles as a")
     .leftJoin("categories as c", "c.id", "a.category_id")
-    .select("a.id", "a.title", "c.category_name","a.content");
+    .select("a.id", "a.title", "c.category_name","a.content","a.author","a.url");
 }
 
 function findById(id){

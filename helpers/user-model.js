@@ -10,7 +10,7 @@ function findById(id){
 }
 
 async function add(user){
-    user.password = await bcrypt.hash(user.password,14);
+    user.password = await bcrypt.hash(user.password,+process.env.HASH_ROUNDS);
     const [id] = await db("users").insert(user,"id");
     return findById(id);
 }

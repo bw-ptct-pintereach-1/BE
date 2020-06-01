@@ -3,7 +3,6 @@ const bcrypt = require("bcryptjs");
 const Users = require("../helpers/user-model");
 const jwt = require("jsonwebtoken");
 const restrict = require("./restrict-middleware");
-const sendEmail = require("../account");
 
 router.post("/register", async (req, res, next) => {
   try {
@@ -14,10 +13,10 @@ router.post("/register", async (req, res, next) => {
         message: "Username already in use",
       });
     }
-    console.log(req.body.email)
-    sendEmail(req.body.email);
+
     res.status(201).json(await Users.add(req.body));
   } catch (err) {
+    console.log(err);
     next(err);
   }
 });
